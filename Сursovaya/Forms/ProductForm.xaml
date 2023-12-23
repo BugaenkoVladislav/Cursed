@@ -1,0 +1,32 @@
+﻿<Window x:Class="Сursovaya.Forms.ProductForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:Сursovaya.Forms"
+        mc:Ignorable="d"
+        Title="Товары" Height="450" Width="450" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="*"/> 
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Click="Add_OnClick"  Height="30" Width="100" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,10">Добавить</Button>
+            <Button  Click="Update_OnClick" Height="30" Width="100" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,10">Обновить</Button>
+            <Button  Click="Delete_OnClick" Height="30" Width="100" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,10">Удалить</Button>
+            <TextBox Height="30" Width="100" HorizontalAlignment="Left" VerticalAlignment="Bottom"  Margin="10,0,0,10" Text="ID Покупки" Name="idBuy" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" >
+            <TextBox Height="30" Width="440" HorizontalAlignment="Left" Margin="0,5,0,10" Text="Название" Name="name" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <TextBox Height="30" Width="440" HorizontalAlignment="Left" Margin="0,0,0,10" Text="Описание" Name="description" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        </StackPanel>
+        <DataGrid Grid.Row="1" x:Name="MyDataGrid" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID Продукта" Binding="{Binding Path=IdProduct}" Width="90" />
+                <DataGridTextColumn Header="Имя" Binding="{Binding Path=Name}" Width="120" />
+                <DataGridTextColumn Header="Описание" Binding="{Binding Path=Description}" Width="250" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

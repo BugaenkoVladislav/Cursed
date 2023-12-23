@@ -1,0 +1,21 @@
+﻿<Window x:Class="Сursovaya.Tables"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:Сursovaya"
+        mc:Ignorable="d"
+        Title="Таблицы" Height="450" Width="800">
+    <Grid>
+        
+        <StackPanel VerticalAlignment="Center">
+            <TextBlock Text="Таблицы" TextAlignment="Center" HorizontalAlignment="Center" FontSize="26" FontWeight="Bold" Margin="0,20,0,20"></TextBlock>
+            <Button Height="40" Width="300" Margin="0,10" Click="Products_OnClick">Товары</Button>
+            <Button Height="40" Width="300" Margin="0,10" Click="Employees_OnClick">Сотрудники</Button>
+            <Button Height="40" Width="300" Margin="0,10" Click="Providers_OnClick">Поставкищики</Button>
+            <Button Height="40" Width="300" Margin="0,10" Click="Buys_OnClick">Покупки</Button>
+            <Button Height="40" Width="300" Margin="0,10" Click="Clients_OnClick">Клиенты</Button>
+            <Button Height="40" Width="300" Margin="0,10" Click="Provides_OnClick">Поставки</Button>
+        </StackPanel>
+    </Grid>
+</Window>

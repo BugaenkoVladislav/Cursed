@@ -1,0 +1,32 @@
+﻿<Window x:Class="Сursovaya.ReportForms.ProductProvideForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:Сursovaya.ReportForms"
+        mc:Ignorable="d"
+        Title="Поставки товаров" Height="600" Width="500" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/> 
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Grid.Row="0" Click="Filter_OnClick" Height="30" Width="250" HorizontalAlignment="Left">Фильтр</Button>
+            <TextBox Height="30" Width="70" HorizontalAlignment="Left" VerticalAlignment="Bottom"  Margin="10,0,0,10" Text="Поставка" Name="idProvide" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <TextBox Height="30" Width="75" HorizontalAlignment="Left" VerticalAlignment="Bottom"  Margin="10,0,0,10" Text="Продукт" Name="idProduct" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        </StackPanel>
+
+
+
+        <DataGrid Grid.Row="1" x:Name="MyDataGrid" AutoGenerateColumns="False" RowBackground="Gray" AlternatingRowBackground="Wheat">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Номер поставки" Binding="{Binding Path=IdProvide}" Width="100" />
+                <DataGridTextColumn Header="Товар" Binding="{Binding Path=IdProduct}" Width="80" />
+                <DataGridTextColumn Header="Количество" Binding="{Binding Path=Count}" Width="80" />
+                <DataGridTextColumn Header="Цена(шт)" Binding="{Binding Path=PriceForOne}" Width="80" />
+                <DataGridTextColumn Header="Сумма" Binding="{Binding Path=Sum}" Width="110" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

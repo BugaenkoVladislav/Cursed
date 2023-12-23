@@ -1,0 +1,34 @@
+﻿<Window x:Class="Сursovaya.Forms.ProvideForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:Сursovaya.Forms"
+        mc:Ignorable="d"
+        Title="Поставки" Height="450" Width="450" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="*"/> 
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+            <Button Click="Add_OnClick"  Height="30" Width="100" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,10">Добавить</Button>
+            <Button  Click="Update_OnClick" Height="30" Width="100" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,10">Обновить</Button>
+            <Button  Click="Delete_OnClick" Height="30" Width="100" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,10">Удалить</Button>
+            <TextBox Height="30" Width="100" HorizontalAlignment="Left" VerticalAlignment="Bottom"  Margin="10,0,0,10" Text="ID Поставки" Name="idProvide" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" >
+            <DatePicker  HorizontalAlignment="Left" Width="440" Margin="0,8,0,5" Name="date"  IsDropDownOpen="False" SelectedDateFormat="Short" />
+            <TextBox Height="30" Width="440" HorizontalAlignment="Left" Margin="0,0,0,5" Text="ID Сотрудника" Name="idEmployee" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <TextBox Height="30" Width="440" HorizontalAlignment="Left" Margin="0,0,0,5" Text="ID Поставщика" Name="idProvider" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        </StackPanel>
+        <DataGrid Grid.Row="1" x:Name="MyDataGrid" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID Поставки" Binding="{Binding Path=IdProvide}" Width="90" />
+                <DataGridTextColumn Header="Дата" Binding="{Binding Path=Date}" Width="90" />
+                <DataGridTextColumn Header="ID Поставщика" Binding="{Binding Path=IdProvider}" Width="120" />
+                <DataGridTextColumn Header="ID Сотрудника" Binding="{Binding Path=IdEmployee}" Width="90" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
